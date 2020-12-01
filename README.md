@@ -14,9 +14,9 @@ product and catalog management systems, analytics tools, CMS, CRM and more.
 ### The technical task:
 
 We want to test how you work with large dataset and your skills to parser large
-files. The starting point of your journey is: `example.jsonl` has 12000000
-records. Each line has: `id`, `orders`, `orderDate`, `reviews`, `reviewDate`,
-`wishes`, `wishDate`.
+files. The starting point of your journey is: `example.jsonl`. The file has
+12000000 records. Each line has: `productId`, `orders`, `orderDate`, `reviews`,
+`reviewDate`, `wishes`, `wishDate`.
 
 Please generate the file with the following command:
 
