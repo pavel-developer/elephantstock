@@ -35,7 +35,7 @@ Please create a parser and save these 12000000 records in mongodb collection.
 #### Task 2
 
 The second task is: The aggregator. Please create a cronjob. The cronjob must
-calculate the orders for each product for the last 7 days, in the last 30 days,
+calculate the orders for each product in the last 7 days, in the last 30 days,
 in the last 90 days and from the beginning.
 
 #### Task 3
