@@ -40,6 +40,6 @@ in the last 90 days and from the beginning.
 
 #### Task 3
 
-The final requirement is a Rest Api endpoint. We want to know to top performers.
-Please share the top products in the last 30 days, the last 90 days and the last
-365 days.
+The final requirement is a Rest Api endpoint. We want to know the top
+performers. Please share the top products in the last 30 days, the last 90 days
+and the last 365 days.
