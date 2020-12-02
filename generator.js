@@ -15,8 +15,6 @@ for (let j = 0; j < rounds; j++) {
     const object = {
       productId: i,
       orders: orders,
-      reviews: randomNumber(),
-      wishes: randomNumber(),
     }
 
     const newLine = `\n`
