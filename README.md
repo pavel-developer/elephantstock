@@ -13,27 +13,32 @@ product and catalog management systems, analytics tools, CMS, CRM and more.
 
 ### Technical task
 
-The technical task wants to be closest as possible with the company dataset and
-daily challenges for our team. For you we created a special company: Dynamic
-prices is a company with history of fifteen years. The company uses an
-aggressive strategy. Each night a special cron job changes the price of each
-product variant. Each product has four different variants: S, M, L, XL. The
-company has more than million of orders. The stakeholder team wants to have a
-best selling report for each product variant in the past 30 days, 90 days, 180
-days and 365 days. The report must contains two import aggregation fileds:
+The technical task aims to be as close as possible with our company's dataset and
+daily challenges for our team. Now... Imagine a special company: "Dynamic
+Prices Ltd". It was founded about 15 years ago, at the beginning of the year 2005. 
+The company has a unique selling strategy: Daily dynamic prices for all the products!
+Each night, a special cron job runs and changes the price of each
+product variant. Each product has four different variants: S, M, L, XL. 
+The company has more than 1 million orders. The stakeholder team wishes to improve sales
+this year, and for that it must gather insights about the company's historic sales.
+The company wants to know which products have the best performance, and more specifically, 
+which variants out of those products are the most "successful". 
+The insights should come in a form of a report for each product variant in the past 30 days, 90 days, 180
+days and 365 days. The report must contain two import aggregation fileds:
 
-- cashFlow. The field represents sum of prices
-- sales. The fields represents how many orders are purchaised.
+- cashFlow. This field represents the sum of prices.
+- sales. This field represents the amount of placed orders.
 
-The output format must be in the JSON format. The example of the report can be
-find below. You have access to dataset. Please execute the following command on
-your local machine:
+The output format of the report must be JSON. 
+
+The entire dataset of the company is available to you -
+Please execute the following command on your local machine to generate it:
 
 ```
 npm run download-dynamic-prices
 ```
 
-The command "downloads" all orders in your local machine. Each row has the
+The command "downloads" all orders to your local machine. Each row has the
 following attributes:
 
 - productId
@@ -43,14 +48,14 @@ following attributes:
 Note: If you're not familiar with `jsonl` as a format please visit:
 [https://jsonlines.org/examples](https://jsonlines.org/examples).
 
-The final goal it's achievable if you "kill" three mystic creates.
+The final goal of having this insightful report is achievable ONLY by "killing" 3 mystical creatures.
 
 #### Creature 1: The parser
 
-You need to build a parser. The parser must extract and save these 10000000+
+You need to build a parser. The parser must extract and save these 1,000,000+
 records in mongodb collection(s).
 
-Hint: Each product id occurs multiple time in the report.
+Hint: Each product id occurs multiple times in the report.
 
 #### Creature 2: The aggregator
 
