@@ -11,35 +11,147 @@ operation in proprietary back office applications. Our ERP includes order and
 partner management systems, customer service tools, factory management systems,
 product and catalog management systems, analytics tools, CMS, CRM and more.
 
-### The technical task:
+Technical task: The technical task wants to be closest as possible with the
+company dataset and daily challenges for our team. For you we created a special
+company: Dynamic prices is a company with history of fifteen years. The company
+uses an aggressive strategy. Each night a special cron job changes the price of
+each product variant. Each product has different variants: S, M, L, XL. The
+company has more than million of orders. The stakeholder team wants to have a
+best selling report for each product variant in the past 30 days, 90 days, 180
+days and 365 days. The report must contains two import fileds:
 
-We want to test how you work with large dataset and your skills to parser large
-files. The starting point of your journey is: `example.jsonl`. The file has
-12000000 records. Each line has: `productId`, `orders`. Each order contains
-details about the purchase date and product price.
+- cashFlow. The field represents sum of prices
+- sales. The fields represents how many orders are purchaised by this variant.
 
-Please generate the file with the following command:
+The output format must be in the JSON format. The example of the report can be
+find below. You have access to dataset. Please execute the following command on
+your local machine:
 
 ```
-npm run generator
+npm run download-dynamic-prices
 ```
 
-If you're not familiar with `jsonl` as a format please visit:
+The command "downloads" all orders in your local machine. Each row has the
+following attributes:
+
+- productId
+- variant. The variants can be: S, M, L, XL.
+- order meta data. The object contains the order date and the dynamic price.
+
+Note: If you're not familiar with `jsonl` as a format please visit:
 [https://jsonlines.org/examples](https://jsonlines.org/examples).
 
-#### Task 1
+The final goal it's achievable if you "kill" three mystic creates.
 
-We want to give you three tasks. The first task has the code name: `The parser`.
-Please create a parser and save these 12000000 records in mongodb collection(s).
+#### Creature 1: The parser
 
-#### Task 2
+You need to build a parser. The parser must extract and save these 10000000+
+records in mongodb collection(s).
 
-The second task is: The aggregator. Please create a cronjob. The cronjob must
-calculate the orders for each product in the last 7 days, in the last 30 days,
-in the last 90 days and from the beginning.
+Hint: Each product id occurs multiple time in the report.
 
-#### Task 3
+#### Creature 2: The aggregator
 
-The final requirement is a Rest Api endpoint. We want to know the top
-performers. Please share the top products in the last 30 days, the last 90 days
-and the last 365 days.
+You need to build a cron job if you want to kill this creature. The cron job
+accumulates product variant orders in the past 30 days, 90 days, 180 days and
+365 days.
+
+#### Creature 3: REST API Call
+
+The stakeholder teams wants to know the best selling product variants in the
+last 30 days, 90 days, 180 days and 365 days. The output format must be:
+
+```
+{
+  "bestSellers": {
+    "30days": {
+      "S": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "M": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "L": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "XL": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      }
+    },
+    "90days": {
+      "S": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "M": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "L": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "XL": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      }
+    },
+    "180days": {
+      "S": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "M": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "L": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "XL": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      }
+    },
+    "365days": {
+      "S": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "M": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "L": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      },
+      "XL": {
+        "productId": "???",
+        "cashFlow": "...",
+        "sales": "..."
+      }
+    }
+  }
+}
+```
