@@ -11,17 +11,19 @@ operation in proprietary back office applications. Our ERP includes order and
 partner management systems, customer service tools, factory management systems,
 product and catalog management systems, analytics tools, CMS, CRM and more.
 
-Technical task: The technical task wants to be closest as possible with the
-company dataset and daily challenges for our team. For you we created a special
-company: Dynamic prices is a company with history of fifteen years. The company
-uses an aggressive strategy. Each night a special cron job changes the price of
-each product variant. Each product has different variants: S, M, L, XL. The
+### Technical task
+
+The technical task wants to be closest as possible with the company dataset and
+daily challenges for our team. For you we created a special company: Dynamic
+prices is a company with history of fifteen years. The company uses an
+aggressive strategy. Each night a special cron job changes the price of each
+product variant. Each product has four different variants: S, M, L, XL. The
 company has more than million of orders. The stakeholder team wants to have a
 best selling report for each product variant in the past 30 days, 90 days, 180
-days and 365 days. The report must contains two import fileds:
+days and 365 days. The report must contains two import aggregation fileds:
 
 - cashFlow. The field represents sum of prices
-- sales. The fields represents how many orders are purchaised by this variant.
+- sales. The fields represents how many orders are purchaised.
 
 The output format must be in the JSON format. The example of the report can be
 find below. You have access to dataset. Please execute the following command on
