@@ -1,6 +1,7 @@
 const fs = require('fs')
 let writeStream = fs.createWriteStream('example.jsonl')
 
+const variants = ['S', 'M', 'L', 'XL']
 const totalRecords = 1200000
 const rounds = 10000
 const records = totalRecords / rounds
@@ -10,11 +11,13 @@ for (let j = 0; j < rounds; j++) {
   while (i < records) {
     i++
 
-    const orders = getOrders()
+    const order = createOrder()
+    let variant = variants[Math.floor(Math.random() * variants.length)]
 
     const object = {
       productId: i,
-      orders: orders,
+      variant,
+      order,
     }
 
     const newLine = `\n`
@@ -28,20 +31,14 @@ writeStream.on('finish', () => {
 
 writeStream.end()
 
-function getOrders() {
-  const random = Math.floor(Math.random() * 10 + 1)
-  const orders = []
-  for (let i = 0; i < random; i++) {
-    const date = randomDate(new Date(2005, 0, 1), new Date())
-    const price = randomNumber()
+function createOrder() {
+  const date = randomDate(new Date(2005, 0, 1), new Date())
+  const price = randomNumber()
 
-    orders.push({
-      price,
-      date,
-    })
+  return {
+    orderDate: date,
+    price,
   }
-
-  return orders
 }
 
 function randomNumber() {
