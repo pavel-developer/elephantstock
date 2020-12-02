@@ -9,14 +9,14 @@ for (let j = 0; j < rounds; j++) {
   let i = 0
   while (i < records) {
     i++
+
+    const orders = getOrders()
+
     const object = {
       productId: i,
-      orders: randomNumber(),
-      orderDate: randomDate(new Date(2005, 0, 1), new Date()),
+      orders: orders,
       reviews: randomNumber(),
-      reviewDate: randomDate(new Date(2005, 0, 1), new Date()),
       wishes: randomNumber(),
-      wishDate: randomDate(new Date(2005, 0, 1), new Date()),
     }
 
     const newLine = `\n`
@@ -29,6 +29,22 @@ writeStream.on('finish', () => {
 })
 
 writeStream.end()
+
+function getOrders() {
+  const random = Math.floor(Math.random() * 10 + 1)
+  const orders = []
+  for (let i = 0; i < random; i++) {
+    const date = randomDate(new Date(2005, 0, 1), new Date())
+    const price = randomNumber()
+
+    orders.push({
+      price,
+      date,
+    })
+  }
+
+  return orders
+}
 
 function randomNumber() {
   const number = Math.floor(Math.random() * records + 1)
