@@ -25,7 +25,7 @@ npm run generator
 ```
 
 If you're not familiar with `jsonl` as a format please visit:
-https://jsonlines.org/examples.
+[https://jsonlines.org/examples](https://jsonlines.org/examples).
 
 #### Task 1
 
