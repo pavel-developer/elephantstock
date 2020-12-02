@@ -4,7 +4,7 @@
   "description": "The exam wants to test your knowledge with cron jobs and large datasets.",
   "main": "generator.js",
   "scripts": {
-    "dynamic-prices": "node ./generator.js"
+    "download-dynamic-prices": "node ./generator.js"
   },
   "keywords": [
     "Exam",
