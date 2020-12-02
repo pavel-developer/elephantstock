@@ -15,8 +15,8 @@ product and catalog management systems, analytics tools, CMS, CRM and more.
 
 We want to test how you work with large dataset and your skills to parser large
 files. The starting point of your journey is: `example.jsonl`. The file has
-12000000 records. Each line has: `productId`, `orders`, `orderDate`, `reviews`,
-`reviewDate`, `wishes`, `wishDate`.
+12000000 records. Each line has: `productId`, `orders`. Each order contains
+details about the purchase date and product price.
 
 Please generate the file with the following command:
 
@@ -30,7 +30,7 @@ https://jsonlines.org/examples.
 #### Task 1
 
 We want to give you three tasks. The first task has the code name: `The parser`.
-Please create a parser and save these 12000000 records in mongodb collection.
+Please create a parser and save these 12000000 records in mongodb collection(s).
 
 #### Task 2
 
