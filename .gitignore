@@ -1,1 +1,7 @@
-*.jsonl
+*.jsonl.idea
+dist
+best-sellers.json
+example.jsonl
+node_modules
+/.idea
+.env

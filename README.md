@@ -1,3 +1,33 @@
+
+Here is several npm scripts:
+
+```bash
+npm run build # compile typescript files
+npm run download-dynamic-prices # generate orders
+npm run seed # write orders to the mongodb
+npm run cronjob # run cronjob on every 5th minute
+npm run http # run rest api to fetch result
+```
+
+Environment variables:
+```bash
+MONGO_CONN_STRING=mongodb://localhost:27017/elephantstock # mongodb connection string
+PORT=3000 # server port
+LINES=1000 # number of lines to write in the DB
+```
+
+GET http://localhost:3000 will respond result of the cronjob
+```JSON
+{
+  "bestSellers": {
+    "30days": { ... },
+    "90days": { ... },
+    "180days": { ... },
+    "365days": { ... },
+  }
+}
+```
+
 # Elephantstock.com
 
 ### About us:
